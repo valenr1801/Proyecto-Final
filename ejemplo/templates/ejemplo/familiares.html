@@ -1,0 +1,17 @@
+{% extends 'ejemplo/base.html' %}
+{% block contenido %}
+<a href='/mi-familia/alta'>Nuevo Familiar</a>
+{% for familiar in lista_familiares %}
+<ul>
+    <li> Nombre: {{familiar.nombre}}, Dirección: {{familiar.direccion}}, Pasaporte: {{familiar.numero_pasaporte}}, Fecha nacimiento: {{familiar.fecha_nacimiento}} 
+        <!-- Esto agrega un link al form de actulización-->
+        <a href='actualizar/{{ familiar.id }}'>Actualizar</a>
+        <a href='borrar/{{ familiar.id }}'>Borrar</a>
+    </li>
+</ul>
+{% endfor %}
+{%endblock %}
+
+{% block titulo%}
+Lista de todos mis Familiares
+{% endblock %}

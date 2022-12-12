@@ -1,0 +1,18 @@
+{% extends 'ejemplo/base.html' %}
+{% block titulo%} 
+Buscar Familiares por nombre
+{% endblock %}
+{% block contenido %}
+  
+  <form action="/mi-familia/buscar" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Guardar">
+  </form>
+
+  {% for familiar in lista_familiares %}
+      <ul>
+          <li> Nombre: {{familiar.nombre}}, Dirección: {{familiar.direccion}}, Pasaporte: {{familiar.numero_pasaporte}}, Fecha de nacimiento: {{familiar.fecha_nacimiento}}</li>
+      </ul>
+  {% endfor %}
+{% endblock %}
