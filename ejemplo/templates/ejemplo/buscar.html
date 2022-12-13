@@ -7,7 +7,7 @@ Buscar Familiares por nombre
   <form action="/mi-familia/buscar" method="post">
     {% csrf_token %}
     {{ form }}
-    <input type="submit" value="Guardar">
+    <input type="submit" value="Buscar">
   </form>
 
   {% for familiar in lista_familiares %}

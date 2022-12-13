@@ -1,0 +1,14 @@
+{% extends 'ejemplo/base.html' %}
+{% block titulo%} Alta de Nuevo Auto {% endblock %}
+{% block contenido %}
+  
+  <form action="/auto/alta" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Guardar">
+    </form>
+
+  <h2 style="color:rgb(243, 43, 43)">{{msg_exito}}</h2>
+
+  <a href='/auto'>Volver a la lista de Autos</a>
+{% endblock %}

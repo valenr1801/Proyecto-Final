@@ -1,0 +1,15 @@
+{% extends 'ejemplo/base.html' %}
+{% block contenido %}
+
+{% for auto in lista_auto %}
+<ul>
+    <li> Propietario: {{auto.propietario}}, Modelo: {{auto.modelo}}
+        
+    </li>
+</ul>
+{% endfor %}
+{%endblock %}
+
+{% block titulo%}
+Lista de todos los Autos
+{% endblock %}

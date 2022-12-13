@@ -18,9 +18,11 @@ from django.urls import path
 from ejemplo.views import index
 from django.contrib import admin
 from django.urls import path
-from ejemplo.views import (index, monstrar_familiares, 
+from ejemplo.views import (index, monstrar_familiares, mostrar_mascota, mostrar_auto, 
                             BuscarFamiliar, AltaFamiliar, 
-                            ActualizarFamiliar, BorrarFamiliar)
+                            ActualizarFamiliar, BorrarFamiliar, BuscarMascota ,
+                            AltaMascota, ActualizarMascota , BuscarAuto ,
+                            AltaAuto, ActualizarAuto)
 urlpatterns = [
       path('admin/', admin.site.urls),
       path('saludar/', index),
@@ -28,5 +30,13 @@ urlpatterns = [
       path('mi-familia/buscar', BuscarFamiliar.as_view()), # NUEVA RUTA PARA BUSCAR FAMILIAR
       path('mi-familia/alta', AltaFamiliar.as_view()), # NUEVA RUTA PARA BUSCAR FAMILIAR
       path('mi-familia/actualizar/<int:pk>', ActualizarFamiliar.as_view()) ,
-      path('mi-familia/borrar/<int:pk>', BorrarFamiliar.as_view())
+      path('mi-familia/borrar/<int:pk>', BorrarFamiliar.as_view()),
+      path('mascota/', mostrar_mascota),
+      path('mascota/buscar', BuscarMascota.as_view()),
+      path('mascota/alta', AltaMascota.as_view()),
+      path('mascota/actualizar/<int:pk>', ActualizarMascota.as_view()),
+      path('auto/', mostrar_auto),
+      path('auto/buscar', BuscarAuto.as_view()),
+      path('auto/alta', AltaAuto.as_view()),
+      path('auto/actualizar/<int:pk>', ActualizarAuto.as_view())
        ]
